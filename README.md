@@ -1,2 +1,2 @@
-# Dhuruv_Detailing_Studio
+https://sanjaisquad.github.io/Dhuruv_Detailing_Studio/ Dhuruv_Detailing_Studio
 Dhuruv_Detailing_Studio webpage files
