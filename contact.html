@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Booking | Dhuruv Detailing Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="Dhuruv Detailing Studio" class="nav-logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="shop.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <span class="mobile-close" onclick="toggleMenu()">✕</span>
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Us</a>
+        <a href="shop.html" onclick="toggleMenu()">Services</a>
+        <a href="gallery.html" onclick="toggleMenu()">Gallery</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header" style="height: 40vh;">
+        <div class="page-header-bg" style="background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-label">Connect With Us</div>
+            <h1 class="bold-title">SECURE YOUR<br><span style="-webkit-text-stroke:2px var(--clr-accent);color:transparent;">SPOT</span></h1>
+        </div>
+    </header>
+
+    <!-- Contact Grid Section -->
+    <section class="section">
+        <div class="container contact-grid">
+            
+            <!-- Left Info panel -->
+            <div class="contact-info-box">
+                <h2 class="section-title">The Studio</h2>
+                <p>Reach out to discuss your vehicle's transformation.</p>
+                
+                <div class="contact-item" style="margin-top: 3rem;">
+                    <h4>Visit Us</h4>
+                    <p>NO:31, Tharamani 100ft Road<br>Opp Proton Hospital<br>Chennai – 600 041</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>Concierge Direct Line</h4>
+                    <p>00000 00000<br>(Mon - Sun: 9:00 AM - 8:00 PM)</p>
+                </div>
+                
+                <div style="margin-top: 3rem;">
+                     <a href="tel:00000000000" class="btn btn-primary">Call Now</a>
+                </div>
+            </div>
+
+            <!-- Right Google Form panel -->
+            <div class="google-form-wrapper">
+                <h2 class="section-title" style="font-size: 2rem;">Service Inquiry Form</h2>
+                <p style="margin-bottom: 2rem;">Fill out our intake form below. The data will be logged into our backend systems for our service team to review instantly.</p>
+                
+                <div class="google-form-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc6a0PsSw5KW7AsjZsPNHAeyr3zEGMCSs30lMapwQHVJMAX_w/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading Google Form...</iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section style="padding-bottom: 7rem;">
+        <div class="container">
+            <div class="section-label" style="justify-content:center;">Location</div>
+            <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Get Directions</h2>
+            <div style="border: 1px solid var(--clr-border); filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(120%); opacity: 0.85; transition: opacity 0.4s ease;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
+                <iframe 
+                    width="100%" 
+                    height="500" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    src="https://maps.google.com/maps?q=Proton%20Hospital,%20Tharamani%20100ft%20Road,%20Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html">
+                        <img src="logo.jpg" alt="Dhuruv Detailing Studio" class="footer-logo-img">
+                    </a>
+                    <p>Chennai's most premium automotive detailing studio. Where perfection meets passion, every single time.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>No.31, Tharamani 100ft Road,<br>Opp Proton Hospital,<br>Chennai 600 041</p>
+                    <p style="margin-top:1rem;">Grand Opening: April 20, 2026</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Dhuruv Detailing Studio. All rights reserved.</p>
+                <p>Arrive Ordinary. Depart Exceptional. ✨</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ─── Navbar scroll ───
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // ─── Mobile menu ───
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

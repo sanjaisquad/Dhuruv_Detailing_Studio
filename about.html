@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Dhuruv Detailing Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="Dhuruv Detailing Studio" class="nav-logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="shop.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <span class="mobile-close" onclick="toggleMenu()">✕</span>
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Us</a>
+        <a href="shop.html" onclick="toggleMenu()">Services</a>
+        <a href="gallery.html" onclick="toggleMenu()">Gallery</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-bg" style="background-image: url('https://images.unsplash.com/photo-1599839619722-39751411ea63?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-label">Our Story</div>
+            <h1 class="bold-title">DRIVEN BY<br><span style="-webkit-text-stroke:2px var(--clr-accent);color:transparent;">PASSION</span></h1>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <section class="section">
+        <div class="container split-section">
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1621252178345-03ba0f5eb221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Our workshop">
+            </div>
+            <div class="content-box">
+                <h2 class="section-title">Excellence in Every Detail.</h2>
+                <p>Located in the heart of Chennai, Dhuruv Detailing Studio was born from a singular obsession: to push automotive aesthetics to their absolute limits. We are not a parts shop; we are a premium facility dedicated to preserving, protecting, and perfecting elite automobiles.</p>
+                <p>We source only the highest grade materials globally—from self-healing paint protection films to ultra-durable ceramic matrix coatings and studio-grade audio systems. Every vehicle entrusted to us undergoes a meticulous transformation strictly governed by our uncompromising standard of excellence.</p>
+                <p>When you leave your keys with Dhuruv, you guarantee your vehicle will be treated with the highest caliber of respect and expertise in the industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html">
+                        <img src="logo.jpg" alt="Dhuruv Detailing Studio" class="footer-logo-img">
+                    </a>
+                    <p>Chennai's most premium automotive detailing studio. Where perfection meets passion, every single time.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>No.31, Tharamani 100ft Road,<br>Opp Proton Hospital,<br>Chennai 600 041</p>
+                    <p style="margin-top:1rem;">Grand Opening: April 20, 2026</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Dhuruv Detailing Studio. All rights reserved.</p>
+                <p>Arrive Ordinary. Depart Exceptional. ✨</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ─── Navbar scroll ───
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // ─── Mobile menu ───
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
