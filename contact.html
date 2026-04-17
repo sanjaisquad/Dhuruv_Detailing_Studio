@@ -98,40 +98,50 @@
             <!-- Right Custom Form panel -->
             <div class="google-form-wrapper">
                 <h2 class="section-title" style="font-size: 2rem;">Service Inquiry Form</h2>
-                <p style="margin-bottom: 2rem;">Fill in your details below and our team will get back to you promptly.</p>
+                <p style="margin-bottom: 2rem;">Fill in your details below and our team will get back to you promptly.
+                </p>
 
                 <!-- Success message (hidden by default) -->
-                <div id="formSuccess" style="display:none; background:rgba(255,69,0,0.1); border:1px solid rgba(255,69,0,0.4); border-radius:4px; padding:1.5rem 2rem; margin-bottom:2rem; text-align:center;">
+                <div id="formSuccess"
+                    style="display:none; background:rgba(255,69,0,0.1); border:1px solid rgba(255,69,0,0.4); border-radius:4px; padding:1.5rem 2rem; margin-bottom:2rem; text-align:center;">
                     <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div>
                     <h4 style="color:var(--clr-accent); margin-bottom:0.4rem;">Inquiry Received!</h4>
-                    <p style="color:var(--clr-sub); font-size:0.9rem;">Thank you! Our team will contact you within 24 hours.</p>
+                    <p style="color:var(--clr-sub); font-size:0.9rem;">Thank you! Our team will contact you within 24
+                        hours.</p>
                 </div>
 
                 <form id="inquiryForm" novalidate>
 
                     <div class="cform-row">
                         <div class="cform-group">
-                            <label class="cform-label" for="cf-name">Full Name <span style="color:var(--clr-accent);">*</span></label>
-                            <input class="cform-input" type="text" id="cf-name" name="cf-name" placeholder="e.g. Rajesh Kumar" required>
+                            <label class="cform-label" for="cf-name">Full Name <span
+                                    style="color:var(--clr-accent);">*</span></label>
+                            <input class="cform-input" type="text" id="cf-name" name="cf-name"
+                                placeholder="e.g. Rajesh Kumar" required>
                         </div>
                         <div class="cform-group">
-                            <label class="cform-label" for="cf-phone">Phone Number <span style="color:var(--clr-accent);">*</span></label>
-                            <input class="cform-input" type="tel" id="cf-phone" name="cf-phone" placeholder="e.g. 9790806404" required>
+                            <label class="cform-label" for="cf-phone">Phone Number <span
+                                    style="color:var(--clr-accent);">*</span></label>
+                            <input class="cform-input" type="tel" id="cf-phone" name="cf-phone"
+                                placeholder="e.g. 9790806404" required>
                         </div>
                     </div>
 
                     <div class="cform-group">
                         <label class="cform-label" for="cf-email">Email Address</label>
-                        <input class="cform-input" type="email" id="cf-email" name="cf-email" placeholder="e.g. yourname@email.com">
+                        <input class="cform-input" type="email" id="cf-email" name="cf-email"
+                            placeholder="e.g. yourname@email.com">
                     </div>
 
                     <div class="cform-group">
                         <label class="cform-label" for="cf-car">Car Model &amp; Year</label>
-                        <input class="cform-input" type="text" id="cf-car" name="cf-car" placeholder="e.g. Hyundai Creta 2023">
+                        <input class="cform-input" type="text" id="cf-car" name="cf-car"
+                            placeholder="e.g. Hyundai Creta 2023">
                     </div>
 
                     <div class="cform-group">
-                        <label class="cform-label" for="cf-service">Service Required <span style="color:var(--clr-accent);">*</span></label>
+                        <label class="cform-label" for="cf-service">Service Required <span
+                                style="color:var(--clr-accent);">*</span></label>
                         <select class="cform-input cform-select" id="cf-service" name="cf-service" required>
                             <option value="" disabled selected>Select a service…</option>
                             <optgroup label="Protection &amp; Coatings">
@@ -163,10 +173,13 @@
 
                     <div class="cform-group">
                         <label class="cform-label" for="cf-message">Additional Message</label>
-                        <textarea class="cform-input cform-textarea" id="cf-message" name="cf-message" placeholder="Any specific requirements, preferred appointment time, or questions…" rows="4"></textarea>
+                        <textarea class="cform-input cform-textarea" id="cf-message" name="cf-message"
+                            placeholder="Any specific requirements, preferred appointment time, or questions…"
+                            rows="4"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem; margin-top:0.5rem;" id="cf-submit">
+                    <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem; margin-top:0.5rem;"
+                        id="cf-submit">
                         Send Inquiry
                     </button>
 
@@ -251,22 +264,22 @@
         // 4. Replace the entry IDs below with your actual field entry IDs
         const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSc6a0PsSw5KW7AsjZsPNHAeyr3zEGMCSs30lMapwQHVJMAX_w/formResponse';
         const FIELD_IDS = {
-            name:    'entry.1000000001',   // Replace with your Name field entry ID
-            phone:   'entry.1000000002',   // Replace with your Phone field entry ID
-            email:   'entry.1000000003',   // Replace with your Email field entry ID
-            car:     'entry.1000000004',   // Replace with your Car Model field entry ID
+            name: 'entry.1000000001',   // Replace with your Name field entry ID
+            phone: 'entry.1000000002',   // Replace with your Phone field entry ID
+            email: 'entry.1000000003',   // Replace with your Email field entry ID
+            car: 'entry.1000000004',   // Replace with your Car Model field entry ID
             service: 'entry.1000000005',   // Replace with your Service field entry ID
             message: 'entry.1000000006'    // Replace with your Message field entry ID
         };
 
-        document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
+        document.getElementById('inquiryForm').addEventListener('submit', async function (e) {
             e.preventDefault();
             const btn = document.getElementById('cf-submit');
             const form = this;
 
             // Basic validation
-            const name    = document.getElementById('cf-name').value.trim();
-            const phone   = document.getElementById('cf-phone').value.trim();
+            const name = document.getElementById('cf-name').value.trim();
+            const phone = document.getElementById('cf-phone').value.trim();
             const service = document.getElementById('cf-service').value;
             if (!name || !phone || !service) {
                 alert('Please fill in your Name, Phone Number, and Service Required.');
@@ -278,10 +291,10 @@
 
             // Build form data
             const body = new FormData();
-            body.append(FIELD_IDS.name,    name);
-            body.append(FIELD_IDS.phone,   phone);
-            body.append(FIELD_IDS.email,   document.getElementById('cf-email').value.trim());
-            body.append(FIELD_IDS.car,     document.getElementById('cf-car').value.trim());
+            body.append(FIELD_IDS.name, name);
+            body.append(FIELD_IDS.phone, phone);
+            body.append(FIELD_IDS.email, document.getElementById('cf-email').value.trim());
+            body.append(FIELD_IDS.car, document.getElementById('cf-car').value.trim());
             body.append(FIELD_IDS.service, service);
             body.append(FIELD_IDS.message, document.getElementById('cf-message').value.trim());
 
