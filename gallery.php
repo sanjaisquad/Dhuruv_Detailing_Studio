@@ -25,7 +25,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="shop.html">Services</a></li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="gallery.php" class="active">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -40,7 +40,7 @@
         <a href="index.html" onclick="toggleMenu()">Home</a>
         <a href="about.html" onclick="toggleMenu()">About Us</a>
         <a href="shop.html" onclick="toggleMenu()">Services</a>
-        <a href="gallery.html" onclick="toggleMenu()">Gallery</a>
+        <a href="gallery.php" onclick="toggleMenu()">Gallery</a>
         <a href="contact.html" onclick="toggleMenu()">Contact</a>
     </div>
 
@@ -59,110 +59,39 @@
     <section class="section gallery-section">
         <!-- Masonry Grid -->
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_1.jpg" alt="Dhuruv Signage">
-                <div class="gallery-overlay">
-                    <h4>Dhuruv Studio</h4>
-                    <span>Signage</span>
-                </div>
-                
-            </div>
+            <?php
+            $gallery_dir = "images/gallery_images/";
+            $images = glob($gallery_dir . "*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", GLOB_BRACE);
 
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_2.png" alt="Dhuruv Logo">
-                <div class="gallery-overlay">
-                    <h4>Dhuruv Car Accessories</h4>
-                    <span>Brand Logo</span>
-                </div>
-                
-            </div>
+            if ($images) {
+                // Sort images by modified time (newest first)
+                usort($images, function ($a, $b) {
+                    return filemtime($b) - filemtime($a);
+                });
 
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_3.jpg" alt="Shop Interior">
-                <div class="gallery-overlay">
-                    <h4>Studio Interior</h4>
-                    <span>Premium Accessories</span>
-                </div>
-                
-            </div>
+                foreach ($images as $image) {
+                    $filename = basename($image);
+                    $title = "Dhuruv Studio";
+                    $subtitle = "Recent Work";
 
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_4.jpg" alt="Accessories Display">
-                <div class="gallery-overlay">
-                    <h4>Accessories Display</h4>
-                    <span>Alloy Wheels & More</span>
-                </div>
-                
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_5.jpg" alt="Our Services">
-                <div class="gallery-overlay">
-                    <h4>Available Services</h4>
-                    <span>Seat Covers, Audio Systems, and more</span>
-                </div>
-                
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_6.jpg" alt="Interior View">
-                <div class="gallery-overlay">
-                    <h4>Shop Layout</h4>
-                    <span>Browse our collection</span>
-                </div>
-                
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_7.jpg" alt="Accessories Rack">
-                <div class="gallery-overlay">
-                    <h4>Accessories Rack</h4>
-                    <span>Wipers, sun shades, and electronics</span>
-                </div>
-                
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_8.jpg" alt="Wall Display">
-                <div class="gallery-overlay">
-                    <h4>Wall Display</h4>
-                    <span>Air fresheners & polishes</span>
-                </div>
-                
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_9.jpg" alt="Floor Mats & Parts">
-                <div class="gallery-overlay">
-                    <h4>Custom Mats</h4>
-                    <span>Durable floor mats</span>
-                </div>
-                
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_10.jpg" alt="Lighting & Speakers">
-                <div class="gallery-overlay">
-                    <h4>Audio & Lighting</h4>
-                    <span>Premium LED & Speaker Systems</span>
-                </div>
-                
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_11.jpg" alt="Grand Opening">
-                <div class="gallery-overlay">
-                    <h4>Grand Opening</h4>
-                    <span>Storefront View</span>
-                </div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="images/new_gallery_12.jpg" alt="Front Desk">
-                <div class="gallery-overlay">
-                    <h4>Welcome Desk</h4>
-                    <span>Reception & Waiting Area</span>
-                </div>
-            </div>
+                    // Beautify the filename as a title if it's not the default naming
+                    if (strpos($filename, 'new_gallery_') === false) {
+                        $title = ucwords(str_replace(['_', '-'], ' ', pathinfo($filename, PATHINFO_FILENAME)));
+                    }
+                    ?>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h4><?php echo $title; ?></h4>
+                            <span><?php echo $subtitle; ?></span>
+                        </div>
+                    </div>
+                    <?php
+                }
+            } else {
+                echo "<p style='text-align:center; grid-column: 1/-1; color: var(--clr-sub); padding: 4rem 0;'>No images found in gallery_images folder.</p>";
+            }
+            ?>
         </div>
     </section>
 
@@ -205,19 +134,25 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="shop.html">Services</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="gallery.php">Gallery</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
                     <div style="margin-bottom: 0.8rem;">
-                        <p style="font-size: 0.8rem; color: var(--clr-accent); margin-bottom: 0.2rem; text-transform: uppercase;">1. Dhuruv Detailing Studio</p>
-                        <p style="margin-bottom: 0;">No.31, Tharamani 100 ft Road, SRP Tools,<br>Thiruvamiyur, Chennai – 600 041</p>
+                        <p
+                            style="font-size: 0.8rem; color: var(--clr-accent); margin-bottom: 0.2rem; text-transform: uppercase;">
+                            1. Dhuruv Detailing Studio</p>
+                        <p style="margin-bottom: 0;">No.31, Tharamani 100 ft Road, SRP Tools,<br>Thiruvamiyur, Chennai –
+                            600 041</p>
                     </div>
                     <div>
-                        <p style="font-size: 0.8rem; color: var(--clr-accent); margin-bottom: 0.2rem; text-transform: uppercase;">2. Dhuruv Car Accessories</p>
-                        <p style="margin-bottom: 0;">No.56A, Tharamani 100 ft Road,<br>Velachery Link Road, Chennai – 600 113</p>
+                        <p
+                            style="font-size: 0.8rem; color: var(--clr-accent); margin-bottom: 0.2rem; text-transform: uppercase;">
+                            2. Dhuruv Car Accessories</p>
+                        <p style="margin-bottom: 0;">No.56A, Tharamani 100 ft Road,<br>Velachery Link Road, Chennai –
+                            600 113</p>
                     </div>
                     <p style="margin-top:0.8rem;"><a href="tel:9790806404" style="color:var(--clr-sub);">97908 06404</a>
                         &nbsp;|&nbsp; <a href="tel:9445235706" style="color:var(--clr-sub);">94452 35706</a></p>
@@ -245,8 +180,6 @@
         function toggleMenu() {
             document.getElementById('mobileMenu').classList.toggle('open');
         }
-
-
 
         // ─── Lightbox logic ───
         let currentImages = [];

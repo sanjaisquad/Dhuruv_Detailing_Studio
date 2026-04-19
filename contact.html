@@ -25,7 +25,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="shop.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -40,7 +40,7 @@
         <a href="index.html" onclick="toggleMenu()">Home</a>
         <a href="about.html" onclick="toggleMenu()">About Us</a>
         <a href="shop.html" onclick="toggleMenu()">Services</a>
-        <a href="gallery.html" onclick="toggleMenu()">Gallery</a>
+        <a href="gallery.php" onclick="toggleMenu()">Gallery</a>
         <a href="contact.html" onclick="toggleMenu()">Contact</a>
     </div>
 
@@ -116,7 +116,15 @@
                 <!-- Success message (hidden by default) -->
                 <div id="formSuccess"
                     style="display:none; background:rgba(255,69,0,0.1); border:1px solid rgba(255,69,0,0.4); border-radius:4px; padding:1.5rem 2rem; margin-bottom:2rem; text-align:center;">
-                    <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div>
+                    <!-- <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div> -->
+                    <div class="svc-icon-wrap" style="margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--clr-accent)"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+                            <line x1="12" y1="22" x2="12" y2="15.5" />
+                            <polyline points="22 8.5 12 15.5 2 8.5" />
+                        </svg>
+                    </div>
                     <h4 style="color:var(--clr-accent); margin-bottom:0.4rem;">Inquiry Received!</h4>
                     <p style="color:var(--clr-sub); font-size:0.9rem;">Thank you! Our team will contact you within 24
                         hours.</p>
@@ -300,7 +308,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="shop.html">Services</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="gallery.php">Gallery</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>

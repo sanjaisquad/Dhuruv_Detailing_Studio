@@ -125,7 +125,7 @@ try {
                 <h3 style='color: #0d0d0d; margin-top: 0;'>Hello {$name},</h3>
                 <p>Thank you for reaching out to <strong>Dhuruv Detailing Studio</strong>!</p>
                 <p>We have successfully received your inquiry regarding <strong>{$service}</strong>. Our detailing experts are reviewing your request and will get back to you shortly at <strong>{$phone}</strong> to discuss your car and provide a quote.</p>
-                <p>In the meantime, feel free to browse our <a href='https://dhuruvcaraccessories.in/gallery.html' style='color: #ff4500; text-decoration: none;'>recent work gallery</a>.</p>
+                <p>In the meantime, feel free to browse our <a href='https://dhuruvcaraccessories.in/gallery.php' style='color: #ff4500; text-decoration: none;'>recent work gallery</a>.</p>
                 <br>
                 <p>Best Regards,<br><strong>The Dhuruv Team</strong></p>
             </div>
