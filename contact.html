@@ -36,7 +36,7 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <span class="mobile-close" onclick="toggleMenu()">âœ•</span>
+        <span class="mobile-close" onclick="toggleMenu()">✕</span>
         <a href="index.html" onclick="toggleMenu()">Home</a>
         <a href="about.html" onclick="toggleMenu()">About Us</a>
         <a href="shop.html" onclick="toggleMenu()">Services</a>
@@ -66,14 +66,27 @@
 
                 <div class="contact-item" style="margin-top: 3rem;">
                     <h4>Visit Us</h4>
-                    <p>No.56A, Tharamani 100 ft Road,<br>Velachery Link Road,<br>Chennai â€“ 600 113</p>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5
+                            style="color:var(--clr-accent); margin-bottom: 0.3rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                            1. Dhuruv Detailing Studio</h5>
+                        <p style="margin-bottom: 0;">No.31, Tharamani 100 ft Road, SRP Tools,<br>Thiruvamiyur, Opp to
+                            Apollo Proton,<br>Chennai – 600 041</p>
+                    </div>
+                    <div>
+                        <h5
+                            style="color:var(--clr-accent); margin-bottom: 0.3rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                            2. Dhuruv Car Accessories</h5>
+                        <p style="margin-bottom: 0;">No.56A, Tharamani 100 ft Road,<br>Velachery Link Road,<br>Chennai –
+                            600 113</p>
+                    </div>
                 </div>
 
                 <div class="contact-item">
                     <h4>Concierge Direct Line</h4>
                     <p><a href="tel:9790806404" style="color:inherit;">97908 06404</a><br><a href="tel:9445235706"
                             style="color:inherit;">94452 35706</a><br><span
-                            style="font-size:0.8rem;color:var(--clr-sub);">(Mon â€“ Sun: 9:00 AM â€“ 8:00 PM)</span></p>
+                            style="font-size:0.8rem;color:var(--clr-sub);">(Mon – Sun : 9:00 AM – 8:00 PM)</span></p>
                 </div>
 
                 <div class="contact-item">
@@ -103,7 +116,7 @@
                 <!-- Success message (hidden by default) -->
                 <div id="formSuccess"
                     style="display:none; background:rgba(255,69,0,0.1); border:1px solid rgba(255,69,0,0.4); border-radius:4px; padding:1.5rem 2rem; margin-bottom:2rem; text-align:center;">
-                    <div style="font-size:2rem; margin-bottom:0.5rem;">âœ…</div>
+                    <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div>
                     <h4 style="color:var(--clr-accent); margin-bottom:0.4rem;">Inquiry Received!</h4>
                     <p style="color:var(--clr-sub); font-size:0.9rem;">Thank you! Our team will contact you within 24
                         hours.</p>
@@ -146,7 +159,7 @@
                         <label class="cform-label" for="cf-service">Service Required <span
                                 style="color:var(--clr-accent);">*</span></label>
                         <select class="cform-input cform-select" id="cf-service" name="cf-service" required>
-                            <option value="" disabled selected>Select a serviceâ€¦</option>
+                            <option value="" disabled selected>Select a service…</option>
                             <optgroup label="Protection &amp; Coatings">
                                 <option>Ceramic Coating</option>
                                 <option>Graphene Coating</option>
@@ -177,7 +190,7 @@
                     <div class="cform-group">
                         <label class="cform-label" for="cf-message">Additional Message</label>
                         <textarea class="cform-input cform-textarea" id="cf-message" name="cf-message"
-                            placeholder="Any specific requirements, preferred appointment time, or questionsâ€¦"
+                            placeholder="Any specific requirements, preferred appointment time, or questions…"
                             rows="4"></textarea>
                     </div>
 
@@ -214,15 +227,59 @@
     <section style="padding-bottom: 7rem;">
         <div class="container">
             <div class="section-label" style="justify-content:center;">Location</div>
-            <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Get Directions
+            <h2 class="section-title" style="font-size: 2rem; margin-bottom: 3rem; text-align: center;">Get Directions
             </h2>
-            <div style="border: 1px solid var(--clr-border); filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(120%); opacity: 0.85; transition: opacity 0.4s ease;"
-                onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-                <iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                    src="https://maps.google.com/maps?q=No.56A+Tharamani+100+ft+Road+Velachery+Link+Road+Chennai+600+113&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                </iframe>
+
+            <div class="maps-wrapper"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; position: relative;">
+                <!-- Orange Dividing Line (Desktop Only) -->
+                <div class="map-divider"
+                    style="position: absolute; left: 50%; top: 10%; bottom: 10%; width: 2px; background: var(--clr-accent); transform: translateX(-50%); z-index: 5;">
+                </div>
+
+                <!-- Map 1 -->
+                <div class="map-container-wrap">
+                    <h4
+                        style="text-align: center; margin-bottom: 1.5rem; color: var(--clr-accent); letter-spacing: 2px; text-transform: uppercase;">
+                        Dhuruv Detailing Studio</h4>
+                    <div style="border: 1px solid var(--clr-border); filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(120%); opacity: 0.85; transition: opacity 0.4s ease;"
+                        onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
+                        <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0"
+                            marginwidth="0"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.870078475902!2d80.2489538457621!3d12.980160564041771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525de4bd84efbf%3A0x1373e34cedae20!2sDhuruv%20Detailing%20Studio!5e0!3m2!1sen!2sin!4v1776595599365!5m2!1sen!2sin">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Map 2 -->
+                <div class="map-container-wrap">
+                    <h4
+                        style="text-align: center; margin-bottom: 1.5rem; color: var(--clr-accent); letter-spacing: 2px; text-transform: uppercase;">
+                        Dhuruv Car Accessories</h4>
+                    <div style="border: 1px solid var(--clr-border); filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(120%); opacity: 0.85; transition: opacity 0.4s ease;"
+                        onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
+                        <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0"
+                            marginwidth="0"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8495636232105!2d80.2365311!3d12.9814721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d04d4d883e5%3A0x4d48991264ee0c64!2sDHURUV%20CAR%20ACCESSORIES!5e0!3m2!1sen!2sin!4v1776595404045!5m2!1sen!2sin">
+                        </iframe>
+
+                    </div>
+                </div>
             </div>
         </div>
+
+        <style>
+            @media (max-width: 992px) {
+                .maps-wrapper {
+                    grid-template-columns: 1fr !important;
+                    gap: 4rem !important;
+                }
+
+                .map-divider {
+                    display: none !important;
+                }
+            }
+        </style>
     </section>
 
     <!-- Footer -->
@@ -249,8 +306,21 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p>No.56A, Tharamani 100 ft Road,<br>Velachery Link Road,<br>Chennai â€“ 600 113</p>
-                    <p style="margin-top:0.6rem;"><a href="tel:9790806404" style="color:var(--clr-sub);">97908 06404</a>
+                    <div style="margin-bottom: 0.8rem;">
+                        <p
+                            style="font-size: 0.8rem; color: var(--clr-accent); margin-bottom: 0.2rem; text-transform: uppercase;">
+                            1. Dhuruv Detailing Studio</p>
+                        <p style="margin-bottom: 0;">No.31, Tharamani 100 ft Road, SRP Tools,<br>Thiruvamiyur, Chennai –
+                            600 041</p>
+                    </div>
+                    <div>
+                        <p
+                            style="font-size: 0.8rem; color: var(--clr-accent); margin-bottom: 0.2rem; text-transform: uppercase;">
+                            2. Dhuruv Car Accessories</p>
+                        <p style="margin-bottom: 0;">No.56A, Tharamani 100 ft Road,<br>Velachery Link Road, Chennai –
+                            600 113</p>
+                    </div>
+                    <p style="margin-top:0.8rem;"><a href="tel:9790806404" style="color:var(--clr-sub);">97908 06404</a>
                         &nbsp;|&nbsp; <a href="tel:9445235706" style="color:var(--clr-sub);">94452 35706</a></p>
                     <p style="margin-top:0.4rem;"><a href="mailto:dhuruvcaraccessories@gmail.com"
                             style="color:var(--clr-sub);">dhuruvcaraccessories@gmail.com</a></p>
@@ -259,8 +329,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Â© 2026 Dhuruv Detailing Studio. All rights reserved.</p>
-                <!-- <p>Arrive Ordinary. Depart Exceptional. âœ¨</p> -->
+                <p>© 2026 Dhuruv Detailing Studio. All rights reserved.</p>
+                <!-- <p>Arrive Ordinary. Depart Exceptional. ✨</p> -->
             </div>
         </div>
     </footer>
@@ -273,7 +343,7 @@
     </a> -->
 
     <script>
-        // â”€â”€â”€ Navbar scroll â”€â”€â”€
+        // ─── Navbar scroll ───
         const nav = document.getElementById('mainNav');
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 60);
@@ -380,7 +450,7 @@
             waText += `Message: ${message}`;
 
             // Replace with the actual studio WhatsApp number (use international format without +)
-            const waNumber = '9790806404';
+            const waNumber = '+919790806404';
             const waUrl = `https://wa.me/${waNumber}?text=${waText}`;
 
             // Redirect to WhatsApp
