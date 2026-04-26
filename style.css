@@ -339,7 +339,7 @@ img {
 }
 
 /* ==============================================
-   HERO — CINEMATIC with SMOKE & LIGHTNING
+   HERO Ã¢â‚¬â€ CINEMATIC with SMOKE & LIGHTNING
    ============================================== */
 .hero-fs {
     height: 100vh;
@@ -945,7 +945,7 @@ img {
 }
 
 .icon-list li::before {
-    content: '→';
+    content: '✓';
     color: var(--clr-accent);
     font-size: 1.2rem;
     flex-shrink: 0;
@@ -1282,76 +1282,8 @@ img {
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* Lightbox */
-.lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(0, 0, 0, 0.95);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
 
-.lightbox.open {
-    display: flex;
-    opacity: 1;
-}
-
-.lightbox-img {
-    max-width: 90vw;
-    max-height: 85vh;
-    object-fit: contain;
-    box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 2.5rem;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.6);
-    transition: color 0.3s;
-}
-
-.lightbox-close:hover {
-    color: var(--clr-accent);
-}
-
-.lightbox-prev,
-.lightbox-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 3rem;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.lightbox-prev:hover,
-.lightbox-next:hover {
-    color: var(--clr-accent);
-    border-color: var(--clr-accent);
-}
-
-.lightbox-prev {
-    left: 2rem;
-}
-
-.lightbox-next {
-    right: 2rem;
-}
+/* Premium Lightbox styles moved to end */
 
 /* ==============================================
    FULL-WIDTH CALLOUT (Marquee)
@@ -1734,7 +1666,7 @@ footer {
 }
 
 /* ==============================================
-   ABOUT PAGE — WHY CHOOSE US CARDS
+   ABOUT PAGE Ã¢â‚¬â€ WHY CHOOSE US CARDS
    ============================================== */
 .about-why-card {
     display: flex;
@@ -1792,7 +1724,7 @@ footer {
 }
 
 /* ==============================================
-   ABOUT PAGE — VISION & MISSION CARDS
+   ABOUT PAGE Ã¢â‚¬â€ VISION & MISSION CARDS
    ============================================== */
 .about-vm-card {
     background: rgba(255, 255, 255, 0.025);
@@ -1878,7 +1810,7 @@ footer {
 }
 
 .about-mission-list li::before {
-    content: '•';
+    content: '✓';
     position: absolute;
     left: 0;
     color: var(--clr-accent);
@@ -2004,7 +1936,7 @@ footer {
 }
 
 /* ==============================================
-   SERVICES PAGE — PROTECTION CARDS (SECTION 1)
+   SERVICES PAGE Ã¢â‚¬â€ PROTECTION CARDS (SECTION 1)
    ============================================== */
 .svc-card {
     background: rgba(255, 255, 255, 0.025);
@@ -2096,7 +2028,7 @@ footer {
 }
 
 /* ==============================================
-   SERVICES PAGE — DETAILING CARDS (SECTION 2)
+   SERVICES PAGE Ã¢â‚¬â€ DETAILING CARDS (SECTION 2)
    ============================================== */
 .svc-detail-card {
     display: flex;
@@ -2167,7 +2099,7 @@ footer {
 }
 
 /* ==============================================
-   SERVICES PAGE — ACCESSORIES CARDS (SECTION 3)
+   SERVICES PAGE Ã¢â‚¬â€ ACCESSORIES CARDS (SECTION 3)
    ============================================== */
 .svc-acc-card {
     background: rgba(255, 255, 255, 0.025);
@@ -2250,7 +2182,7 @@ footer {
 }
 
 /* ==============================================
-   CONTACT PAGE — INQUIRY FORM
+   CONTACT PAGE Ã¢â‚¬â€ INQUIRY FORM
    ============================================== */
 .cform-group {
     margin-bottom: 1.5rem;
@@ -2486,3 +2418,381 @@ footer {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+/* ==============================================
+   HERO & INDEX PAGE SPECIFIC
+   ============================================== */
+
+        /* Page-specific overrides */
+        .hero-img-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at 50% 100%, rgba(255, 69, 0, 0.15) 0%, transparent 80%);
+        }
+
+        .car-container {
+            position: absolute;
+            bottom: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            z-index: 6;
+        }
+
+        .car-red {
+            width: 48%;
+            max-width: 550px;
+            object-fit: contain;
+            opacity: 0;
+            mix-blend-mode: lighten;
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
+            mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
+            animation: carRevealLeft 2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+            margin-right: -2%;
+            z-index: 2;
+        }
+
+        .car-black {
+            width: 48%;
+            max-width: 550px;
+            object-fit: contain;
+            opacity: 0;
+            mix-blend-mode: lighten;
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
+            mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
+            animation: carRevealRight 2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+            z-index: 1;
+        }
+
+        @keyframes carRevealLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-150px) translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0) translateY(0) scale(1);
+            }
+        }
+
+        @keyframes carRevealRight {
+            from {
+                opacity: 0;
+                transform: translateX(150px) translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0) translateY(0) scale(1);
+            }
+        }
+
+        .car-glow-floor {
+            position: absolute;
+            bottom: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            max-width: 90%;
+            height: 80px;
+            background: radial-gradient(ellipse, rgba(255, 69, 0, 0.5) 0%, transparent 60%);
+            z-index: 5;
+            filter: blur(30px);
+            animation: floorGlowPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes floorGlowPulse {
+
+            0%,
+            100% {
+                opacity: 0.8;
+                transform: translateX(-50%) scaleX(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) scaleX(1.15);
+            }
+        }
+
+        /* Grand opening countdown */
+        .countdown-bar {
+            background: rgba(255, 69, 0, 0.08);
+            border-top: 1px solid rgba(255, 69, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+            padding: 1rem 5%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--clr-accent);
+        }
+
+        .countdown-timer {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .count-unit {
+            text-align: center;
+        }
+
+        .count-num {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: #fff;
+            line-height: 1;
+            letter-spacing: 2px;
+        }
+
+        .count-sub {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--clr-sub);
+        }
+
+        .count-sep {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--clr-accent);
+            align-self: start;
+            padding-top: 0.2rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--clr-bg-2);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--clr-bg-3);
+            border: 1px solid var(--clr-border);
+            padding: 2.5rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(255, 69, 0, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 5rem;
+            color: var(--clr-accent);
+            opacity: 0.1;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            color: var(--clr-accent);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .testimonial-author {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .testimonial-car {
+            font-size: 0.75rem;
+            color: var(--clr-accent);
+            letter-spacing: 2px;
+        }
+
+        @media(max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .car-silhouette {
+                width: 100%;
+            }
+        }
+    
+
+/* Map Responsiveness */
+@media (max-width: 992px) {
+    .maps-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 4rem !important;
+    }
+    .map-divider {
+        display: none !important;
+    }
+}
+
+/* ==============================================
+   PREMIUM LIGHTBOX & GALLERY
+   ============================================== */
+.gallery-section { padding: 2rem 5%; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+    border: 1px solid var(--clr-border);
+    transition: var(--transition);
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay h4 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--clr-accent); margin-bottom: 0.2rem; }
+.gallery-overlay span { font-size: 0.8rem; color: rgba(255,255,255,0.6); letter-spacing: 2px; text-transform: uppercase; }
+
+/* Enhanced Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(3, 3, 3, 0.98);
+    backdrop-filter: blur(12px);
+    display: none;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.lightbox.open { display: flex; opacity: 1; }
+.lightbox-overlay { position: absolute; inset: 0; z-index: 1; }
+.lightbox-header {
+    position: relative;
+    z-index: 10;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.lightbox-info h4 { font-family: var(--font-heading); color: var(--clr-accent); letter-spacing: 1px; margin-bottom: 0.2rem; }
+.lightbox-info span { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px; }
+.lightbox-controls { display: flex; gap: 1rem; align-items: center; }
+.lightbox-ctrl-btn, .lightbox-close-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: 4px;
+}
+.lightbox-ctrl-btn:hover, .lightbox-close-btn:hover { background: var(--clr-accent); border-color: var(--clr-accent); }
+.lightbox-close-btn { font-size: 1.2rem; }
+.lightbox-container {
+    flex: 1;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+.lightbox-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox-img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+    user-select: none;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+.lightbox-prev, .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 80px;
+    background: rgba(255,255,255,0.02);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255,255,255,0.3);
+    cursor: pointer;
+    z-index: 20;
+    transition: var(--transition);
+}
+.lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,69,0,0.1); color: var(--clr-accent); }
+.lightbox-prev { left: 0; border-radius: 0 8px 8px 0; }
+.lightbox-next { right: 0; border-radius: 8px 0 0 8px; }
+.lightbox-footer {
+    padding: 1rem 5%;
+    text-align: center;
+    background: rgba(3, 3, 3, 0.8);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+}
+

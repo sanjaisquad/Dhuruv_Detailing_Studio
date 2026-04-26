@@ -59,11 +59,11 @@ if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 require_once 'config.php';
 
 // --- SMTP Settings ---
-$smtpHost     = SMTP_HOST;
+$smtpHost = SMTP_HOST;
 $smtpUsername = SMTP_USER;
 $smtpPassword = SMTP_PASS;
-$smtpPort     = SMTP_PORT;
-$smtpSecure   = PHPMailer::ENCRYPTION_SMTPS;
+$smtpPort = SMTP_PORT;
+$smtpSecure = PHPMailer::ENCRYPTION_SMTPS;
 
 $mail = new PHPMailer(true);
 
@@ -90,7 +90,7 @@ try {
     $adminBody = "
     <div style='font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;'>
         <div style='background-color: #0d0d0d; padding: 20px; text-align: center; border-bottom: 3px solid #ff4500;'>
-            <h2 style='color: #fff; margin: 0;'>New Website Inquiry</h2>
+            <img src='https://dhuruvcaraccessories.in/images/logo.jpg' alt='Dhuruv Detailing Studio' style='max-height: 60px;'>
         </div>
         <div style='padding: 20px;'>
             <p><strong>Name:</strong> {$name}</p>
