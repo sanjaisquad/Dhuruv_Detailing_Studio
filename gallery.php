@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/rect21.png">
 </head>
 
 <body>
